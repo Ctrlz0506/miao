@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 30px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .b1 {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            box-sizing: border-box;
+            border: 1px solid rgb(54, 224, 247);
+        }
+        
+        .b1:nth-child(1) {
+            left: 0px;
+        }
+        
+        .b1:nth-child(2) {
+            left: 100px;
+        }
+        
+        .b1:nth-child(3) {
+            left: 200px;
+        }
+        
+        .b1:nth-child(4) {
+            left: 300px;
+        }
+        
+        .bul {
+            position: absolute;
+            display: none;
+            height: 80px;
+            width: 100px;
+            padding: 0;
+            margin: 0;
+            top: 30px;
+            left: 10px;
+        }
+        
+        .bli {
+            box-sizing: border-box;
+            height: 20px;
+            width: 80px;
+            border: 1px solid rgb(236, 66, 66);
+        }
+        
+        .b1:hover .bul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li class="b1">一级选择框
+            <ul class="bul">
+                <li class="bli">a</li>
+                <li class="bli">a</li>
+                <li class="bli">a</li>
+                <li class="bli">a</li>
+            </ul>
+        </li>
+        <li class="b1">一级选择框
+            <ul class="bul">
+                <li class="bli">b</li>
+                <li class="bli">b</li>
+                <li class="bli">b</li>
+                <li class="bli">b</li>
+            </ul>
+        </li>
+        <li class="b1">一级选择框
+            <ul class="bul">
+                <li class="bli">c</li>
+                <li class="bli">c</li>
+                <li class="bli">c</li>
+                <li class="bli">c</li>
+            </ul>
+        </li>
+        <li class="b1">一级选择框
+            <ul class="bul">
+                <li class="bli">d</li>
+                <li class="bli">d</li>
+                <li class="bli">d</li>
+                <li class="bli">d</li>
+            </ul>
+        </li>
+
+    </ul>
+</body>
+
+</html>
