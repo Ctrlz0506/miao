@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid aqua;
+            /* display: table; */
+            position: relative;
+            /* margin: auto; */
+        }
+        
+        p {
+            position: absolute;
+            font-size: 10px;
+            top: 0;
+            left: 0;
+        }
+        
+        .box2 {
+            border: 2px solid aquamarine;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .box3 {
+            position: relative;
+            /* float: left; */
+            width: 100px;
+            height: 100px;
+            border: 2px solid aqua;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        
+        .box4 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid aqua;
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+        }
+        
+        .box5 {
+            border: 2px solid aquamarine;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .p4 {
+            top: 220px;
+            left: 115px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>定位方法固定div套固定div,上下左右都为零然后margin:auto</p>
+        <div class="box2"></div>
+    </div>
+    <div class="box3">
+        <p>替换元素用display:table-cell</p>
+        <img src="./tx.jpg" alt="">
+    </div>
+    <div class="box4">
+        <div class="box5"></div>
+    </div>
+    <p class="p4">固定盒子,text-align: center;line-height:;vertical-align: middle;</p>
+</body>
+
+</html>
