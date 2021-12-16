@@ -129,12 +129,12 @@
     console.log(a % 2 === 0 ? 'even' : 'odd');
 </script> -->
 
-<script id="ch0104/04">
-    // var a = parseInt(prompt('a'))
-
-    // console.log(str % 2 === 0 ? 'no' : 'yes');
-    // console.log(event.keyCode);
-</script>
+<!-- <script id="ch0104/04">
+    var a = prompt('a')
+    var str = a.charCodeAt(0)
+    console.log(str);
+    console.log(str % 2 === 0 ? 'no' : 'yes');
+</script> -->
 <!-- <script id="ch0104/05">
     var a = parseInt(prompt('a'))
     var b = parseInt(prompt('b'))
@@ -161,7 +161,11 @@
 <!-- <script id="ch0104/10">
     var a = parseInt(prompt('a'))
     var b = parseInt(prompt('b'))
-    console.log(a < 60 || b < 60 ? '1' : '0');
+    if (a >= 60 && b < 60 || a < 60 && b >= 60) {
+        console.log(1);
+    } else {
+        console.log(0);
+    }
 </script> -->
 <!-- <script id="ch0104/11">
     var a = parseInt(prompt('a'))
@@ -176,19 +180,193 @@
     var a = parseFloat(prompt('a'))
     console.log(a >= 0 && a < 5 ? (-a + 2.5).toFixed(3) : (a >= 5 && a < 10 ? (2 - 1.5(a - 3)(a - 3)).toFixed(3) : (a >= 10 && a < 20 ? (a / 2 - 1.5).toFixed(3) : 'a大于20')));
 </script> -->
-<script id="ch0104/14">
-</script>
-<script id="ch0104/15">
-</script>
-<script id="ch0104/16">
-</script>
-<script id="ch0104/17">
-</script>
-<script id="ch0104/18">
-</script>
-<script id="ch0104/19">
-</script>
+<!-- <script id="ch0104/14">
+    var a = parseFloat(prompt('a'))
+    var y = prompt('y')
+    if (a <= 1000 && y != y) {
+        console.log(8);
+    } else if (a <= 1000 && y == y) {
+        console.log(13);
+    } else if (a >= 1000 && y != y) {
+        console.log(8 + Math.ceil((a - 1000) / 500) * 4);
+    } else if (a >= 1000 && y == y) {
+        console.log(13 + Math.ceil((a - 1000) / 500) * 4);
+    }
+</script> -->
+<!-- <script id="ch0104/15">
+    var a = parseFloat(prompt('a'))
+    var b = parseFloat(prompt('b'))
+    var c = parseFloat(prompt('c'))
+    if (a > b && a > c) {
+        console.log(a);
+    } else if (b > a && b > c) {
+        console.log(b);
+    } else if (c > a && c > b) {
+        console.log(c);
+    }
+</script> -->
+<!-- <script id="ch0104/16">
+    var a = parseFloat(prompt('a'))
+    var b = parseFloat(prompt('b'))
+    var c = parseFloat(prompt('c'))
+    if (a + b >= c && a + c >= b && b + c >= a) {
+        console.log('yes');
+    } else {
+        console.log('no');
+    }
+</script> -->
+<!-- <script id="ch0104/17">
+    var a = parseInt(prompt('a'))
+    if (a % 100 == 0 && a % 400 == 0) {
+        console.log('y');
+    } else if (a % 4 == 0) {
+        console.log('y');
+
+    } else {
+        console.log('n');
+    }
+</script> -->
+<!-- <script id="ch0104/18">
+    var a = parseInt(prompt('a'))
+    var b = parseInt(prompt('b'))
+    if (a == 1 && b == -1) {
+        console.log('yes');
+    } else if (a == 1 && b == 1) {
+        console.log('yes');
+    } else if (a == -1 && b == -1) {
+        console.log('yes');
+    } else if (a == -1 && b == 1) {
+        console.log('yes');
+    } else {
+        console.log('no');
+    }
+</script> -->
+<!-- <script id="ch0104/19">
+    var a = parseInt(prompt('a'))
+    var b = parseInt(prompt('b'))
+    var c = prompt('远算符')
+    if (c == '+') {
+        console.log(a + b);
+    } else if (c == '-') {
+        console.log(a - b);
+    } else if (c == '*') {
+        console.log(a * b);
+    } else if (c == '/') {
+        console.log(a / b);
+    } else {
+        console.log('Invalid operator!');
+    }
+</script> -->
 <script id="ch0104/20">
 </script>
-<script id="ch0104/21">
+<!-- <script id="ch0104/21">
+    var n = parseInt(prompt('n'))
+    var x = parseInt(prompt('x'))
+    var y = parseInt(prompt('y'))
+    if (y % x == 0) {
+        console.log(10 - y / x);
+    } else {
+        console.log(10 - Math.trunc(y / x) - 1);
+    }
+</script> -->
+<!-- <script id="ch0105/01">
+    var a = parseInt(prompt('a'))
+    var str = 0
+    for (i = 0; i < a; i++) {
+        str += parseInt(prompt('age'))
+    }
+    console.log(str / a);
+</script> -->
+<!-- <script id="ch0105/02">
+    var a = 12
+    var str = 0
+    for (i = 0; i < a; i++) {
+        str += parseInt(prompt('age'))
+    }
+    console.log(str / a);
+</script> -->
+<!-- <script id="ch0105/03">
+    var a = parseInt(prompt('a'))
+    var str = 0
+    for (i = 0; i < a; i++) {
+        str += parseInt(prompt('age'))
+    }
+    console.log((str / a).toFixed(4));
+</script> -->
+<!-- <script id="ch0105/04">
+    var a = parseInt(prompt('a'))
+    var str = 0
+    for (i = 0; i < a; i++) {
+        str += parseInt(prompt('age'))
+    }
+    console.log(str + ' ' + (str / a).toFixed(5));
+</script> -->
+<!-- <script id="ch0105/05">
+    var a = parseInt(prompt('a'))
+    var str = 0
+    var num = 0
+    for (i = 0; i < a; i++) {
+        str = parseInt(prompt('age'))
+        if (num<= str) {
+            num = str
+        }
+
+    }
+    console.log(num);
+</script> -->
+<!-- <script id="ch0105/06">
+    var a = parseInt(prompt('a'))
+    var str = 0
+    var max = 0
+    var min = 0
+    for (i = 0; i < a; i++) {
+        str = parseInt(prompt('age'))
+        if (str >= max) {
+            max = str
+        }
+        if (min >= str) {
+            min = str
+        }
+
+    }
+    console.log(max - min);
+</script> -->
+<!-- <script id="ch0105/07">
+    var day = parseInt(prompt('day'))
+    var str = 0
+
+    for (i = 0; i < day; i++) {
+        str += parseInt(prompt('jp'))
+    }
+    var g = parseInt(str % 10)
+    var s = parseInt((str % 100 / 10).toFixed(0))
+    var b = parseInt((str / 1000).toFixed(1) * 10)
+    var n = b + s + g
+    console.log(b + ' ' + s + ' ' + g + ' ' + n);
+</script> -->
+
+<script id="ch0105/08">
+</script>
+<script id="ch0105/09">
+</script>
+<script id="ch0105/10">
+</script>
+<script id="ch0105/11">
+</script>
+<script id="ch0105/13">
+</script>
+<script id="ch0105/14">
+</script>
+<script id="ch0105/15">
+</script>
+<script id="ch0105/16">
+</script>
+
+<script id="ch0105/17">
+</script>
+<script id="ch0105/18">
+</script>
+<script id="ch0105/19">
+</script>
+<script id="ch0105/20">
 </script>
