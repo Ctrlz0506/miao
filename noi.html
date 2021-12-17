@@ -46,7 +46,7 @@
 <script type="xx" id="ch0103/09">
     var a = parseFloat(prompt('a:'))
     var pi = 3.14159 
- console.log('直径' + (2 * a).toFixed(4), '周长' + (2 * pi * a).toFixed(4), '面积' + (pi * a * a).toFixed(4));
+ console.log( (2 * a).toFixed(4),  (2 * pi * a).toFixed(4),  (pi * a * a).toFixed(4));
 </script>
 
 <script type="xx" id="ch0103/10">
@@ -133,7 +133,7 @@
 <script type="xx" id="ch0104/04">
     var a = prompt('a')
     var str = a.charCodeAt(0)
-    console.log(str);
+    <!-- console.log(str); -->
     console.log(str % 2 === 0 ? 'NO' : 'YES');
 </script>
 <script type="xx" id="ch0104/05">
@@ -372,15 +372,20 @@
 <script type="xx" id="ch0105/07">
     var day = parseInt(prompt('day'))
     var str = 0
+    var a=0
+    var b =0
+    var c=0
 
     for (i = 0; i < day; i++) {
-        str += parseInt(prompt('jp'))
+        a += parseInt(prompt('a'))
+        b += parseInt(prompt('b'))
+        c += parseInt(prompt('c'))
     }
-    var g = parseInt(str % 10)
-    var s = parseInt((str % 100 / 10).toFixed(0))
-    var b = parseInt((str / 1000).toFixed(1) * 10)
-    var n = b + s + g
-    console.log(b + ' ' + s + ' ' + g + ' ' + n);
+    // var g = parseInt(str % 10)
+    // var s = parseInt((str % 100 / 10).toFixed(0))
+    // var b = parseInt((str / 1000).toFixed(1) * 10)
+    var n = a + b + c
+    console.log(a + ' ' + b + ' ' + c + ' ' + n);
 </script>
 
 <script type="xx" id="ch0105/08">
@@ -435,7 +440,7 @@
             eight += 1
         }
     }
-    console.log(first + '\n' + five + '\n' + eight);
+    console.log(first , five , eight);
 </script>
 <script type="xx" id="ch0105/12">
     var n = parseInt(prompt('n'))
