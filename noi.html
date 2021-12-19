@@ -664,24 +664,261 @@
     }
     console.log(c);
 </script>
-<script id="ch0105/27"></script>
-<script id="ch0105/28"></script>
-<script id="ch0105/29"></script>
-<script id="ch0105/30"></script>
+<script type="xx" id="ch0105/27">
+    var k =parseInt(prompt('k'))
+    var n=1
+    var sn =0
+    while(sn <= k){
+       sn = sn+1/n
+        n++
+    }
+    console.log(n-1);
+</script>
+<script type="xx" id="ch0105/28">
+    var num = prompt('num')+''
+    var str=''
+   for(i=1;i<=num.length;i++){
+      str+= num[num.length-i]+' '
+   }
+   console.log(str);
+    
+</script>
+<script type="xx" id="ch0105/29">
+     var num =parseInt(prompt('num')) 
+     var str=''
+     var fnum=num+''
+        if(num>=0){
+            for(i=1;i<=fnum.length;i++){
+            str+= fnum[fnum.length-i]
+        }
+        }else{
+            for(i=1;i<=fnum.length;i++){
+            str+= fnum[fnum.length-i]
+        }
+        str='-'+str
+        }
+   
+   console.log(parseInt(str));
+</script>
+<script type="xx" id="ch0105/30">
+    var m =parseInt(prompt('m'))
+    var k =parseInt(prompt('k'))
+    var a =m+''
+    var t = 0
+    for (i=0;i<a.length;i++){
+        str =a[i]
+        // console.log(str);
+        if(str=='3'){
+            t+=1
+        }
+    }
+    if(t=k&&m%19==0){
+        console.log('YES');
+    }else{
+        console.log('NO');
+    }
+  
 
-<script id="ch0105/31"></script>
-<script id="ch0105/32"></script>
-<script id="ch0105/33"></script>
-<script id="ch0105/34"></script>
-<script id="ch0105/35"></script>
-<script id="ch0105/36"></script>
-<script id="ch0105/37"></script>
-<script id="ch0105/38"></script>
-<script id="ch0105/39"></script>
-<script id="ch0105/40"></script>
-<script id="ch0105/41"></script>
+</script>
 
-<script id="ch0105/42"></script>
-<script id="ch0105/43"></script>
+<script type="xx" id="ch0105/31">
+    var n = parseInt(prompt('n'))
+    var m = parseInt(prompt('m'))
+    
+    var str=''
+    var flag=true
+    var bum =new Array
+     var c=1
+     var log=''
+    for(i=0;i<n;i++){
+        str+=','+!flag
+        
+     }
+    //  console.log(str);
+     bum=str.split(',')
+     console.log(bum);
+     for(i=1;i<bum.length;i++){
+         bum[i]=!flag
+     }
+     
+   
+     for(i=2;i<=m;i++){
+         while(i*c<=10){
+            bum[i*c]=!bum[i*c]
+            c++
+        }
+        c=1
+        
+     }
+     for(i=1;i<=n;i++){
+         if(bum[i]==false){
+            log+=i+','
+         }
+     }
+     
+     log=log.substr(0,log.length-1)
+     console.log(log);
+    
+  </script>
+<script type="xx" id="ch0105/32">
+    var n =parseInt(prompt('n'))
+    var q=2
+    var p=1
+    var c=q+p
+    var d =q
+    var sum =q/p
+    for(i=1;i<n;i++){
+      sum+=c/d
+      c=c+d
+      d=c-d
+      
+     
+    }
+    console.log(sum.toFixed(4));
+</script>
+<script type="xx" id="ch0105/33">
+    var n =parseInt(prompt('n'))
+    var sum =0
+    for(i=1;i<=n;i++){
+        sum+=((-1)**(i-1))*(1/i)
+       
+    }
+    console.log(sum.toFixed(4));
+</script>
+<script type="xx" id="ch0105/34">
+    var n =parseInt(prompt('n'))
+    var sum =1
+    var lum =0
+    var b = n
+    for(i=0;i<n;i++){
+        n=n-i
+     for(j=0;j<n;j++){
+          sum = sum*(n-j)
+         }
+         lum+=sum
+        n=b
+        sum=1
+    }
+    console.log(lum);
+    // console.log(sum);
+</script>
+<script type="xx" id="ch0105/35">
+    var n =parseInt(prompt('n'))
+    var sum =1
+    var lum =1
+    var b=n
+    for(i=0;i<n;i++){
+        n=n-i
+     for(j=0;j<n;j++){
+          sum = sum*(n-j)
+         }
+         
+         lum+=1/sum
+        n=b
+        sum=1
+    }
+   console.log(lum.toFixed(10));
+</script>
+<script type="xx" id="ch0105/36">
+    var x =parseFloat(prompt('x'))
+    var n =parseInt(prompt('n'))
+    var sum =1
+    var c=n
+    for(i=0;i<n;i++){
+        for(j=0;j<c;j++){
+            sum +=x**n
+            n--
+        }
+        
+    }
+    console.log(sum.toFixed(2));
+
+</script>
+<script type="xx" id="ch0105/37">
+    var m =parseInt(prompt('m'))
+    var n =parseInt(prompt('n'))
+    var x =parseInt(prompt('x'))
+
+
+</script>
+<script id="ch0105/38">
+
+</script>
+<script type="xx" id="ch0105/39">
+    var n =parseInt(prompt('n'))
+    var sum = 0
+    for(i=1;i<=n;i++){
+        if(i%7!=0&&i!=17&&i!=27&&i!=37&&i!=47){
+            sum+=i**2
+        }
+    }
+console.log(sum);
+</script>
+<script type="xx" id="ch0105/40">
+    var n =parseInt(prompt('n'))
+    var c=0
+    for(i=1;i<=n;i++){
+        var a=String(i)
+        for(j=0;j<a.length;j++){
+            if(a[j]==1){
+                c+=1
+            }
+        }
+    }
+    console.log(c);
+</script>
+<script type="xx" id="ch0105/41">
+    var l =parseInt(prompt('l'))
+    var r =parseInt(prompt('r'))
+    var c=0
+    for(i=l;i<=r;i++){
+        var a=String(i)
+        for(j=0;j<a.length;j++){
+            if(a[j]==2){
+                c+=1
+            }
+        }
+    }
+    console.log(c);
+
+</script>
+
+<script type="xx" id="ch0105/42">
+    var row =parseInt(prompt('row'))
+    var col =parseInt(prompt('col'))
+    var x =prompt('x')
+    var b =x
+    var back = parseInt(prompt('back'))
+    var sum =''
+    var lum =''
+    for(i=0;i<row;i++){
+    
+        if(back==1){
+            for(j=0;j<col;j++){
+            sum +=x
+             }
+           
+        }else if(back==0){
+           
+            for(j=0;j<col;j++){
+                if(j>=1&&j<col-1&&i>0&&i<row-1){
+                    x=' '
+                }else{
+                    x=b
+                }
+                sum += x
+             }
+           
+        }
+        // console.log(sum);
+        lum+=sum+'\n'
+        sum=''
+    }
+console.log(lum);
+
+</script>
+<script id="ch0105/43">
+var n =parseInt(prompt('n'))
+</script>
 <script id="ch0105/44"></script>
 <script id="ch0105/45"></script>
