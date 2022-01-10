@@ -1,4 +1,4 @@
-var Ctrlz0506 = {
+var ctrlz0506 = {
   chunk: function (array, size) {
     let crr = array;
     let result = [];
