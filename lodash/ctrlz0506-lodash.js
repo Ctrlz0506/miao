@@ -1,4 +1,4 @@
-var Ctrlz0506 = {
+var ctrlz0506 = {
   chunk: function (array, size) {
     let crr = array;
     let result = [];
@@ -11,8 +11,10 @@ var Ctrlz0506 = {
         transfer.push(crr[i]);
       }
       result.push(transfer);
-      crr = crr.splice(0, i);
+      crr.splice(0, i);
+      transfer = [];
     }
     return result;
   },
+  compact: function () {},
 };
