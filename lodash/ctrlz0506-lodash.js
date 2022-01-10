@@ -24,16 +24,14 @@ var ctrlz0506 = {
       crr.push(brr[i]);
     }
   },
-  drop: function (arr, n) {
-    if (!n) n = 1;
+  drop: function (arr, n = 1) {
     let brr = [];
     for (i = n; i < arr.length; i++) {
       brr.push(arr[i]);
     }
     return brr;
   },
-  dropRight: function (arr, n) {
-    if (!n) n = 1;
+  dropRight: function (arr, n = 1) {
     let len = arr.length - n;
     let result = [];
     for (i = 0; i < len; i++) {
@@ -96,13 +94,14 @@ var ctrlz0506 = {
     for (i = 0; i < arr.length; i++) {
       result += arr[i] + separator;
     }
-    result = result.slice(0, a.length - 1);
+    result = result.slice(0, result.length - 1);
     return result;
   },
   last: function (arr) {
-    return arr.length - 1;
+    return arr[arr.length - 1];
   },
   lastIndexOf: function (arr, value, fromIndex) {
+    if (fromIndex < 0) return -1;
     if (!fromIndex) fromIndex = arr.length - 1;
     for (i = fromIndex; i >= 0; i--) {
       if (arr[i] == value) return i;
