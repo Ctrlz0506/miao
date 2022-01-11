@@ -201,8 +201,9 @@ var ctrlz0506 = {
       end = arguments[0];
     }
     let res = [];
+    if (step == 0) return new Array(Math.abs(end - start)).fill(start);
     if (end < start && step > 0) step *= -1;
-    for (i = start; end >= 0 ? i < end : i > end; i += step) {
+    for (i = start; start > end ? i > end : i < end; i += step) {
       res.push(i);
     }
     return res;
