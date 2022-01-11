@@ -92,7 +92,7 @@ var ctrlz0506 = {
   join: function (arr, separator) {
     let result = "";
     for (i = 0; i < arr.length; i++) {
-      result += arr[i] + separator;
+      result += arr[i] + "" + separator;
     }
     result = result.slice(0, result.length - 1);
     return result;
@@ -114,4 +114,98 @@ var ctrlz0506 = {
     }
     return result;
   },
+  uniq: function () {},
+  uniqBy: function () {},
+  // 从数组中剔除输入元素
+  without: function (arr, ...val) {
+    let res = [];
+    for (i = 0; i < arr.length; i++) {
+      if (!val.includes(arr[i])) {
+        res.push(arr[i]);
+      }
+    }
+    return res;
+  },
+  zip: function (...arr) {
+    let a = [...arr];
+    let res = [];
+    for (i = 0; i < a[0].length; i++) {
+      let b = [];
+      for (k = 0; k < a.length; k++) {
+        b.push(a[k][i]);
+      }
+      res.push(b);
+    }
+    return res;
+  },
+  countBy: function () {},
+  every: function () {},
+  filter: function () {},
+  find: function () {},
+  forEach: function () {},
+  groupBy: function () {},
+  keyBy: function () {},
+  map: function () {},
+  partition: function () {},
+  reduce: function () {},
+  reduceRight: function () {},
+  reject: function () {},
+  sample: function () {},
+  shuffle: function () {},
+  size: function () {},
+  some: function () {},
+  isBoolean: function () {},
+  isEmpty: function () {},
+  isEqual: function () {},
+  isNaN: function () {},
+  isNil: function () {},
+  isNull: function () {},
+  isNumber: function () {},
+  toArray: function (value) {
+    let res = [];
+    for (k in value) {
+      res.push(value[k]);
+    }
+    return res;
+  },
+  ceil: function () {},
+  max: function (arr) {
+    if (arr.length == 0) return undefined;
+    let max = arr[0];
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return max;
+  },
+  maxBy: function () {},
+  sumBy: function () {},
+  sum: function (arr) {
+    let sum = 0;
+    for (i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum;
+  },
+  repeat: function (string, n = 1) {
+    let res = "";
+    for (i = 0; i < n; i++) {
+      res += string;
+    }
+    return res;
+  },
+  range: function (start = 0, end, step = 1) {
+    if (arguments.length == 1) {
+      start = 0;
+      end = arguments[0];
+    }
+    let res = [];
+    if (end < start && step > 0) step *= -1;
+    for (i = start; end >= 0 ? i < end : i > end; i += step) {
+      res.push(i);
+    }
+    return res;
+  },
+  cloneDeep: function () {},
 };
