@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function MySet(){
+     }
+      MySet.prototype.add = function(val){
+      this[val]= val
+      return this
+     }
+     MySet.prototype.delete=function(item){
+        delete this[item]
+        return true
+     }
+     MySet.prototype.has = function(item){
+            for (let k in this){
+              if(this[k]== item) {return true}else{return false}
+            }
+     }
+     MySet.prototype.clear = function(){
+            for (let k in this){
+              delete this[k]
+            }
+            return undefined
+     }
+
+     function MyMap(){}
+     MyMap.prototype.set = function(val,item){
+       this[val]={key:val,vulue:item}
+       return this
+     }
+     MyMap.prototype.get = function(val){
+       
+       return this[val].vulue
+     }
+     MyMap.prototype.has = function(item){
+            for (let k in this){
+              if(this[k].key== item) {return true}else{return false}
+            }
+     }
+     MyMap.prototype.clear = function(){
+            for (let k in this){
+              delete this[k]
+            }
+            return undefined
+     }
+     MyMap.prototype.delete=function(item){
+        delete this[item]
+        return true
+     }
+  </script>
+</body>
+</html>

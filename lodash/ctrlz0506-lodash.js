@@ -23,6 +23,7 @@ var ctrlz0506 = {
       if (!brr[i]) continue;
       crr.push(brr[i]);
     }
+    return crr;
   },
   drop: function (arr, n = 1) {
     let brr = [];
@@ -65,9 +66,36 @@ var ctrlz0506 = {
   },
   findIndex: function () {},
   findLastIndex: function () {},
-  flatten: function () {},
-  flattenDeep: function () {},
-  flattenDepth: function () {},
+  flatten: function (arr) {
+    let res = [];
+    for (i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        res.push(...arr[i]);
+      } else {
+        res.push(arr[i]);
+      }
+    }
+    return res;
+  },
+  flattenDeep: function (arr) {
+    let res = [];
+    for (var i = 0; i < arr.length; i++) {
+      item = arr[i];
+      if (Array.isArray(item)) {
+        item = flattenDeep(item);
+        res.push(...item);
+      } else {
+        res.push(item);
+      }
+    }
+    return res;
+  },
+  flattenDepth: function (arr, depth = 1) {
+    for (let i = 0; i < depth; i++) {
+      arr = this.flatten(arr);
+    }
+    return arr;
+  },
   fromPairs: function (arr) {
     let obj = {};
     arr.forEach(function (item) {
@@ -209,4 +237,30 @@ var ctrlz0506 = {
     return res;
   },
   cloneDeep: function () {},
+  difference: function (arr, ...val) {
+    let res = [];
+    let value = [...val];
+    let flage = true;
+    for (i = 0; i < arr.length; i++) {
+      for (j = 0; j < value.length; j++) {
+        for (k = 0; k < value[j].length; k++) {
+          if (arr[i] == value[j][k]) flage = false;
+        }
+      }
+      if (flage) res.push(arr[i]);
+      flage = true;
+    }
+    return res;
+  },
+  concat: function (arr, ...val) {
+    let value = [...val];
+    for (i = 0; i < value.length; i++) {
+      if (Array.isArray(value[i])) {
+        arr.push(...value[i]);
+      } else {
+        arr.push(value[i]);
+      }
+    }
+    return arr;
+  },
 };
