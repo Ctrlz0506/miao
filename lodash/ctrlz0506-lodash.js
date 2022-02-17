@@ -64,7 +64,26 @@ var ctrlz0506 = {
     }
     return arr;
   },
-  findIndex: function () {},
+  findIndex: function (arr, predicate, fromIndex = 0) {
+    for (let i = fromIndex; i < arr.length; i++) {
+      if (typeof predicate == "function") {
+        if (predicate(arr[i])) return i;
+      } else if (typeof predicate == "object") {
+        let flag = true;
+        for (let k in predicate) {
+          if (arr[i][k] !== predicate[k]) flag = false;
+        }
+        if (flag) return i;
+      } else if (Array.isArray(predicate)) {
+        if (arr[i][predicate[0]] == predicate[1]) return i;
+      } else if (typeof predicate == "string") {
+        if (arr[i][predicate]) return i;
+      } else {
+        if (arr[i] == predicate) return i;
+      }
+    }
+    return -1;
+  },
   findLastIndex: function () {},
   flatten: function (arr) {
     let res = [];

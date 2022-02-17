@@ -54,6 +54,43 @@
         delete this[item]
         return true
      }
+
+
+
+
+     function Stack(initials){
+        this.head=null
+        this._size = 0
+        initials.forEach(it=>{this.push (it)})
+       
+     }
+
+     Stack.prototype.push=function(val){
+       let node={
+         vulue:val,
+         next:this.head
+       }
+       this.head=node
+       this._size++
+       return this
+     }
+     Stack.prototype.pop=function(){
+       this.head=this.head.next
+       this._size--
+       return this
+     }
+     Stack.prototype.peek=function(){
+        return this.head.value
+     }
+    //  Stack.prototype.size=function(){
+    //     return this._size
+  
+    //  }
+    Object.defineProperty(Stack.prototype,'size',{
+      get:function(){
+        return this._size
+      }
+    })
   </script>
 </body>
 </html>
