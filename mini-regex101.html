@@ -6,22 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    span:nth-child(odd){
+        background-color: #d5ebff;
+    }
+    span:nth-child(even){
+        background-color: #9fcfff;
+    }
+    span:empty{
+        display: inline-block;
+        width: 2px;
+        /* margin: 0 -1px 0 -1px; */
+        margin-left: -1px;
+        margin-right: -1px;
+        height: 1em;
+        vertical-align: middle;
+        background-color: rgb(53, 184, 245);
+    }
+    #string{
+    width: 400px;
+     position: relative;
+    }
+ 
+    textarea,pre{
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+        width: 100%;
+        height: 150px;
+        font-size: 24px;
+        font-family: consloas;
+        padding: 10px;
+        border: 1px solid;
+        overflow: auto;
+        background-color: transparent;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        line-height: 1.5;
+    }
+</style>
 <body>
     <div>REGULAR EXPRESSION</div>
-    <input type="text" id="reInput"><button onclick="run()">run</button>
+    <input type="text" id="reInput" value="\b" onkeyup="run()"><button oninput="run()">run</button>
     <div>
-        <label for="">i<input type="checkbox"></label>
-        <label for="">g<input type="checkbox"></label>
-        <label for="">m<input type="checkbox"></label>
+        <label for="">i<input type="checkbox" id="reChecki"></label>
+        <label for="">g<input type="checkbox" id="reCheckg" checked></label>
+        <label for="">m<input type="checkbox" id="reCheckm"></label>
 
     </div>
     <div>TEST STRING</div>
-    <textarea name="" id="testStringInput" cols="30" rows="5" style="resize:none" ></textarea>
+    <div id="string">
+        <pre id="resultShow"></pre>
+        <textarea name="" onscroll="scrollSync()" id="testStringInput" cols="30" rows="5" style="resize:none" oninput="run()">as fsa gdg dfdgc</textarea>
+    </div>
+    
     <script>
         function run(){
             var reStr = reInput.value
-            var re = new RegExp(reStr,)
+            var flags = getFlags()
             var testString = testStringInput.value
+            
+            try{
+            var re = new RegExp(reStr,flags)
+
+             }catch(e){
+               if(e instanceof SyntaxError){
+                resultShow.innerHTML = testString+'\n'
+                return
+               }
+               else{
+                   throw e
+               }
+             }
+
+            var resultHtml=''
+            var startIndex = 0
+            var match
+            while (match = re.exec(testString)) {
+                resultHtml += testString.slice(startIndex,match.index)
+                resultHtml += '<span>'+match[0]+'</span>'
+                startIndex=re.lastIndex
+                if(match[0] == ''){re.lastIndex++}
+                if(!re.global){
+                    break
+                }
+            }
+            resultHtml += testString.slice(startIndex)
+            
+            resultShow.innerHTML = resultHtml+'\n'
+
+        }
+        function scrollSync(){
+            resultShow.scrollTop=testStringInput.scrollTop
+        }
+        run()
+        function getFlags(){
+            var flags = ''
+            if(reChecki.checked){
+                flags +='i'
+            }
+            if(reCheckg.checked){
+                flags +='g'
+            } if(reCheckm.checked){
+                flags +='m'
+            }
+            return flags
         }
     </script>
 </body>
