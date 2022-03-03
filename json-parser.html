@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = '{"x":1,"y":2,"c":[1,2,3],"p":{"z":{"x":5,"y":6}}}'
+    var i = 0
+
+    function parseValue(){
+        if(str[i]=='"'){
+            return parseString()
+        }
+        if(str[i]>='0'&&str[i]<='9'){
+           return parseNumber()
+        }
+        if(str[i]=='t'){
+            return parseTrue()
+        }
+        if(str[i]=='f'){
+            return parseFalse()
+        }
+        if(str[i]=='n'){
+            return parsenull()
+        }
+        if(str[i]=='['){
+            return parseArray()
+        }
+        if(str[i]=='{'){
+            return parseObject()
+        }
+    }
+    function parseString(){
+        i++
+        
+        var start = i
+        while(str[i] !== '"'){
+            i++
+        }
+        var s =str.slice(start,i)
+        i++
+        return s 
+    }
+
+    function parseNumber(){
+        var numStr= ''
+        while(str[i]>='0'&&str[i]<='9'){
+            numStr+=str[i++]
+        }
+        return parseInt(numStr,10)
+    }
+
+    function parseTrue(){
+       i += 4
+       return true
+    }
+
+    function parseFalse(){
+       i += 5
+       return true
+    }
+
+    function parsenull(){
+       i += 4
+       return true
+    }
+
+    function parseArray(){
+        var ary =[]
+        i++
+        if(str[i]==']'){
+            i++
+            return ary
+        }
+        while(true){
+        var value = parseValue()
+        ary.push(value)
+            if(str[i]==','){
+                i++
+                continue
+            }
+            if(str[i]==']'){
+                i++
+                return ary
+            }
+        }
+    }
+
+    function parseObject(){
+        i++
+        var obj ={}
+        if(str[i]=='}'){
+            i++
+            return obj
+        }
+        while(true){
+
+        var key = parseString()
+        i++
+        var val =parseValue()
+        obj[key]=val
+        if(str[i]==','){
+                i++
+                continue
+            }
+            if(str[i]=='}'){
+                i++
+                return obj
+            }
+        }
+
+    }
+
+
+
+    
+</script>
+</html>
